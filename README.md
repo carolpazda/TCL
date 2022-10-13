@@ -1,4 +1,4 @@
-# RCO - Alpha
+# TCL- Teoria Clássica de Laminados
 _Código feito para a disciplina de Relações Constitutivas, utilizando a Teoria Clássica dos Laminados_.
 
 O código está separado em:
