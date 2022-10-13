@@ -51,28 +51,6 @@ function matriz_Q(E11::Float64, E22::Float64, G12::Float64, v12::Float64)
 
 end #function
 
-# Plano Médio -> Não me conformo que não bate!!!!!!!!
-# v -> Espessura total do laminado
-# Tendo em mente que a espessura vai ser igual para todas as lâminas
-# Plano médio hm
-#function FuncaoCoordenadas(v::Float64,n_camadas::Int64)
-#	
-#    # Armazenando as variáveis
-#	h = zeros(n_camadas+1)
-#	zm = zeros(3*n_camadas,1)
-#	h[1] = -v/2 
-#
-#	for i=1:n_camadas
-#		h[i+1] = h[i] + espessura_por_lamina
-#		zm[3*i-2] = - espessura_por_lamina/2
-#        zm[3*i-1] = h[i] + espessura_por_lamina/2
-#        zm[3*i] = h[i] + espessura_por_lamina/2
-#	end
-#        # Retornando o que queremos
-#		return h,zm
-#
-#end #function
-
 # Código para a matriz ABBD arcaico, feio... mas que funciona.
 function ABBD_laminado(h, n, E11, E22, G12, v12, angulo)
 
