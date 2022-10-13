@@ -1,5 +1,5 @@
 # RCO - Alpha
-Código feito para a disciplina de Relações Constitutivas, utilizando a Teoria Clássica dos Laminados.
+_Código feito para a disciplina de Relações Constitutivas, utilizando a Teoria Clássica dos Laminados_.
 
 O código está separado em três terminais:
 
