@@ -12,5 +12,7 @@ O código está separado em:
 Os critério de falha implementados são:
 
 **a)** Máxima tensão;
+
 **b)** Tsai-Hill;
+
 **c)** Tsai-Wu.
