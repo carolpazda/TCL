@@ -138,8 +138,8 @@ tensao_global, tensao_local, deformacao_global, deformacao_local = Defor_Tensoes
 
 **CRITÉRIOS DE FALHA:**
 
+Independente do _main_ que você esteja utilizando, o seu código irá retornar os valores de FS e Ms para os seguintes critérios de falha:
+
 **a)** Máxima tensão;
-
 **b)** Tsai-Hill;
-
 **c)** Tsai-Wu.
