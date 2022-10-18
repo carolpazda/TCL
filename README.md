@@ -78,9 +78,9 @@ function main()
 
 ```
 
-O código irá calcular as propriedades E11, E22, v12, G12 com a função auxiliar presente em _RegraMisturas.jl_. É importante ressaltar que você pode entrar no seu main tanto com a fração volumétrica, tanto com a mássica.
+O código irá calcular as propriedades E11, E22, v12, G12 com a função auxiliar presente em _RegraMisturas.jl_. É importante ressaltar que você pode entrar no seu main tanto com a fração volumétrica, tanto com a mássica (o que você possuir).
 
-**(3) main_HalphinTsai** -> Você deve utilizar esse main caso você possua as frações volumétricas ou mássicas do laminado (sua escolha); e os módulos de elasticidade da fibra e da matriz, bem como os coeficientes de poisson da fibra e da matriz.
+**III - Halphin-Tsai** -> Você deve utilizar esse main caso você possua as frações volumétricas ou mássicas do laminado (sua escolha); e os módulos de elasticidade da fibra e da matriz, bem como os coeficientes de poisson da fibra e da matriz.
 
 E claro, modifique suas entrada conforme a sua necessidade.
 
