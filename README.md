@@ -1,7 +1,7 @@
 # TCL- Teoria Clássica de Laminados
 _Código feito para a disciplina de Relações Constitutivas, utilizando a Teoria Clássica dos Laminados_.
 
-_De autoria: Verônica Caroline Herbst Pazda_
+_Autoria: Verônica Caroline Herbst Pazda_
 
 O código está separado em três códigos principais:
 
