@@ -80,9 +80,49 @@ function main()
 
 O código irá calcular as propriedades E11, E22, v12, G12 com a função auxiliar presente em _RegraMisturas.jl_. É importante ressaltar que você pode entrar no seu main tanto com a fração volumétrica, tanto com a mássica (o que você possuir).
 
-**III - Halphin-Tsai** -> Você deve utilizar esse main caso você possua as frações volumétricas ou mássicas do laminado (sua escolha); e os módulos de elasticidade da fibra e da matriz, bem como os coeficientes de poisson da fibra e da matriz.
+**III - Halphin-Tsai**: Você deve utilizar esse main caso você possua as frações volumétricas ou mássicas do laminado (sua escolha); e os módulos de elasticidade da fibra e da matriz, bem como os coeficientes de poisson da fibra e da matriz. Entre no _main_HalphinTsai.jl_; e nesse caso forneça os seguintes valores:
 
-E claro, modifique suas entrada conforme a sua necessidade.
+```
+function main() 
+
+  # Digite a fração volumétrica da fibra e da matriz
+  fracaoVolumetrica_fibra  = 0.4
+  fracaoVolumetrica_matriz = 0.6
+
+  # Digite a fração mássica da fibra e da matriz
+  fracaoMassica_fibra = 0.7
+  fracaoMassica_matriz = 0.3
+
+  # Digite a densidade da fibra e da matriz (kg/m^3)
+  df = 1200 # -> Densidade da fibra
+  dm = 2600 # -> Densidade da matriz
+
+  # Digite o módulo de elasticidade da fibra e da matriz, em Pa
+  Ef = 85.0E9 # -> Módulo de elasticidade da fibra
+  Em = 3.4E9  # -> Módulo de elasticidade da matriz
+
+  # Digite os coeficientes de poisson da fibra e da matriz
+  vf = 0.2 # -> Coeficiente de poisson da fibra
+  vm = 0.3 # -> Coeficiente de poisson da matriz
+
+  # Digite aqui o seu ξ1 -> Para arranjo quadrado e fibra circular ξ1 = 2
+  ξ1 = 2
+
+  # Digite aqui o seu ξ2 -> Para fibra circular e arrando quadrado ξ1 = 1
+  ξ2 = 1
+
+  # Primeiro vamos informar ao programa o número de camadas do laminado
+  n_camadas = 4 
+
+  # Digite aqui o ângulo de orientação das fibras [°] (em ordem, por favor!)
+  angulo = [45.0; 0.0; 0.0; 45.0]
+
+  # Digite aqui a espessura do laminado [m]
+  espessura = 3E-3
+
+```
+
+**E claro, modifique suas entradas conforme a sua necessidade.**
 
 Os critério de falha implementados são:
 
