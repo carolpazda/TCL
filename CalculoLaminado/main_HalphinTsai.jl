@@ -102,18 +102,43 @@ function main()
     tensao_global, tensao_local, deformacao_global, deformacao_local = Defor_Tensoes(E11, E22, G12, v12, 
 	                                                n_camadas, v, angulo, Defo_PlanoMedio[1:3], Defo_PlanoMedio[4:6])
 
-	
     # CÁLCULO DOS CRITÉRIOS DE FALHA
     # 1 -> Máxima Tensão
-    MaxTensao = MaximaTensao(n_camadas, tensao_local, Xt, Xc, Yt, Yc, S12)
+    SF_MaxTensao = MaximaTensao(n_camadas, tensao_local, Xt, Xc, Yt, Yc, S12)
 
     # 2 -> Tsai-Hill
-    TsaiHill = Tsai_Hill(n_camadas, tensao_local, Xt, Xc, Yt, Yc, S12)
+    SF_Hill, Msh = Tsai_Hill(n_camadas, tensao_local, Xt, Xc, Yt, Yc, S12)
 
     # 3 -> Tsai-Wu
-    TsaiWu = Wu(Xt, Xc, Yt, Yc, S12, n_camadas, tensao_local)
+    SF_Wu, Msw = Wu(Xt, Xc, Yt, Yc, S12, n_camadas, tensao_local)
+
+    # Plotando os gráficos
+    # Primeiro vamos chamar a função que está nos retornando os pontos de interesse
+    sig1, sig2, sig3, sigt, sigc, plot1 = Plot_CriteriosFalha(Xt,Xc,Yt,Yc,S12,0)
+
+    # Plotando a Máxima Tensão
+    Plots.plot([Xt,Xc,Xc,Xt, Xt], [Yt,Yt,Yc,Yc,Yt], label="Máxima Tensão", linecolor=:tomato)
+
+    # Plotando Tsai-Hill
+    Plots.plot!(sigt, plot1[1:250], label="Tsai-Hill", linecolor=:green)
+    Plots.plot!(sigc, plot1[251:500], label = false, linecolor=:green)
+    Plots.plot!(sigc, plot1[501:750], label = false, linecolor=:green)
+    Plots.plot!(sigt, plot1[751:1000], label = false, linecolor=:green)
+
+    # Vamos plotar os pontos σ1 e σ2 dos critérios de falha utilizados
+    tens1 = tensao_local[1,:]
+    tens2 = tensao_local[2,:]
+    #@show tensao_local
+    #@show tens1
+    #@show tens2
+    Plots.plot!(tens1,tens2, seriestype =:scatter, label = false)
+
+    # Plotando Tsai-Wu
+    Plots.plot!(sig1,sig3, label="Tsai-Wu", linecolor=:darkmagenta)
+    display(Plots.plot!(sig1, sig2, label=false, linecolor=:darkmagenta, title="Critérios de falha", 
+	                    xlabel = "σ1 [Pa]", ylabel = "σ2 [Pa]"))
 
     # Vamos retornar tudo que é de interesse para o usuário
-    return ABBD, Defo_PlanoMedio, tensao_global, tensao_local, deformacao_global, deformacao_local, MaxTensao, TsaiHill, TsaiWu
+    return ABBD, Defo_PlanoMedio, tensao_global, tensao_local, deformacao_global, deformacao_local, SF_MaxTensao, SF_Hill, Msh, SF_Wu, Msw
 
 end
