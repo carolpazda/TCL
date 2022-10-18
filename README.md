@@ -124,10 +124,16 @@ function main()
 
 **E claro, modifique suas entradas conforme a sua necessidade.**
 
-Todos os _mains_ irão retornar a matriz ABBD, calculada pela função
+Todos os _mains_ irão retornar a matriz ABBD, calculada pela função:
 
 ```
-  ABBD= ABBD_laminado(v,n_camadas,E11, E22, G12, v12, angulo)
+ABBD = ABBD_laminado(v,n_camadas,E11, E22, G12, v12, angulo)
+```
+
+Irá calcular as tensões e deformações locais e globais utilizando:
+
+```
+tensao_global, tensao_local, deformacao_global, deformacao_local = Defor_Tensoes(E11, E22, G12, v12, n_camadas, v, angulo, Defo_PlanoMedio[1:3], Defo_PlanoMedio[4:6])
 ```
 
 Os critério de falha implementados são:
