@@ -37,13 +37,13 @@ function Plot_CriteriosFalha(Xt,Xc,Yt,Yc,S12,tau12)
     for k=1:1000
 
         sig2[k] = (sqrt(4*Xc^2*Xt^2*Yc*Yt*tau12^2-3*S12^2*Xc*Xt*Yc*Yt*sig1[k]^2+(((4*S12^2*Xc*Xt^2+4*S12^2*Xc^2*Xt)*Yc-2*S12^2*Xc^2*Xt^2*Yc^2*sqrt(1/(Xc*Xt*Yc*Yt)))*Yt
-                   -2*S12^2*Xc^2*Xt^2*Yc*sqrt(1/(Xc*Xt*Yc*Yt))*Yt^2)*sig1[k]+S12^2*Xc^2*Xt^2*Yt^2-2*S12^2*Xc^2*Xt^2*Yc*Yt+S12^2*Xc^2*Xt^2*Yc^2)-S12*Xc*Xt*Yc*sqrt(1/(Xc*Xt*Yc*Yt))*Yt*sig1[k]
-                   +S12*Xc*Xt*Yt+S12*Xc*Xt*Yc)/(2*S12*Xc*Xt)
+                   -2*S12^2*Xc^2*Xt^2*Yc*sqrt(1/(Xc*Xt*Yc*Yt))*Yt^2)*sig1[k]+S12^2*Xc^2*Xt^2*Yt^2-2*S12^2*Xc^2*Xt^2*Yc*Yt+S12^2*Xc^2*Xt^2*Yc^2)
+                    -S12*Xc*Xt*Yc*sqrt(1/(Xc*Xt*Yc*Yt))*Yt*sig1[k]+S12*Xc*Xt*Yt+S12*Xc*Xt*Yc)/(2*S12*Xc*Xt)
 
         sig3[k] = -(sqrt(4*Xc^2*Xt^2*Yc*Yt*tau12^2-3*S12^2*Xc*Xt*Yc*Yt*sig1[k]^2+(((4*S12^2*Xc*Xt^2+4*S12^2*Xc^2*Xt)*Yc-2*S12^2*Xc^2*Xt^2*Yc^2*sqrt(1/(Xc*Xt*Yc*Yt)))*Yt
-                  -2*S12^2*Xc^2*Xt^2*Yc*sqrt(1/(Xc*Xt*Yc*Yt))*Yt^2)*sig1[k]+S12^2*Xc^2*Xt^2*Yt^2-2*S12^2*Xc^2*Xt^2*Yc*Yt+S12^2*Xc^2*Xt^2*Yc^2)+S12*Xc*Xt*Yc*sqrt(1/(Xc*Xt*Yc*Yt))*Yt*sig1[k]
-                  -S12*Xc*Xt*Yt-S12*Xc*Xt*Yc)/(2*S12*Xc*Xt)
-
+                  -2*S12^2*Xc^2*Xt^2*Yc*sqrt(1/(Xc*Xt*Yc*Yt))*Yt^2)*sig1[k]+S12^2*Xc^2*Xt^2*Yt^2-2*S12^2*Xc^2*Xt^2*Yc*Yt+S12^2*Xc^2*Xt^2*Yc^2)
+                  +S12*Xc*Xt*Yc*sqrt(1/(Xc*Xt*Yc*Yt))*Yt*sig1[k]-S12*Xc*Xt*Yt-S12*Xc*Xt*Yc)/(2*S12*Xc*Xt)
+    
     end # for
 
     #@show sig2
