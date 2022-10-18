@@ -5,7 +5,7 @@ _De autoria: Verônica Caroline Herbst Pazda_
 
 O código está separado em três códigos principais:
 
-**I - Propriedades Laminado** -> Você deve utilizar esse main caso você já possua as propriedades do seu laminado: E11, E22, v12 e G12. Primeiro entre no _main_propLaminado.jl_ (é lá que você irá alterar sua entrada). Você deve entrar com as suas propriedades da seguinte forma:
+**I - Propriedades Laminado**: Você deve utilizar esse main caso você já possua as propriedades do seu laminado: E11, E22, v12 e G12. Primeiro entre no _main_propLaminado.jl_ (é lá que você irá alterar sua entrada). Você deve entrar com as suas propriedades da seguinte forma:
 
 ```
 function main() 
@@ -42,11 +42,11 @@ function main()
 
 ```
 
-E claro, modifique sua entrada conforme a sua necessidade.
-
-**(2) main_RegraMisturas** -> Você deve utilizar esse main caso você possua as frações volumétricas ou mássicas do laminado (sua escolha); e os módulos de elasticidade da fibra e da matriz, bem como os coeficientes de poisson da fibra e da matriz.
+**II - Regra das Misturas**: Você deve utilizar esse main caso você possua as frações volumétricas ou mássicas do laminado (sua escolha); e os módulos de elasticidade da fibra e da matriz, bem como os coeficientes de poisson da fibra e da matriz. Entre no _main_RegraMisturas.jl_; e nesse caso forneça os seguintes valores:
 
 **(3) main_HalphinTsai** -> Você deve utilizar esse main caso você possua as frações volumétricas ou mássicas do laminado (sua escolha); e os módulos de elasticidade da fibra e da matriz, bem como os coeficientes de poisson da fibra e da matriz.
+
+E claro, modifique suas entrada conforme a sua necessidade.
 
 Os critério de falha implementados são:
 
