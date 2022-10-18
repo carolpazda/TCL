@@ -156,4 +156,4 @@ SF_Wu, Msw = Wu(Xt, Xc, Yt, Yc, S12, n_camadas, tensao_local)
 ```
 
 Os critérios de falha são plotados, conforme o exemplo abaixo:
-
+![ExemploPlotJulia](https://user-images.githubusercontent.com/107930972/196515813-08695d9f-2b07-4b27-9d44-e7af94de21bf.png)
