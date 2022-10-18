@@ -1,6 +1,8 @@
 # TCL- Teoria Clássica de Laminados
 _Código feito para a disciplina de Relações Constitutivas, utilizando a Teoria Clássica dos Laminados_.
 
+_De autoria: Verônica Caroline Herbst Pazda_
+
 O código está separado em:
 
 **(1) main_propLaminado** -> Você deve utilizar esse main caso você já possua as propriedades do seu laminado: E11, E22, v12 e G12.
