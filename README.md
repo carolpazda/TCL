@@ -9,6 +9,7 @@ O código está separado em três códigos principais:
 
 ```
 function main() 
+
   # Informe ao programa o número de camadas do seu laminado
   n_camadas = 4 
 
@@ -19,25 +20,25 @@ function main()
   espessura = 3E-3
   
   # Informe as propriedades do material (Em Pa meu amigo!)?
-	E11 = 19.76E9
-	E22 = 1.97E9
-	G12 = 0.7E9
-	v12 = 0.35
+  E11 = 19.76E9
+  E22 = 1.97E9
+  G12 = 0.7E9
+  v12 = 0.35
   
   # Informe o carregamento do laminado [N e N/m]
   Nx = 1000000.0
-	Ny = 200000.0
-	Nxy = 0.0 
-	Mx = 0.0
-	My = 0.0
-	Mxy = 0.0
+  Ny = 200000.0
+  Nxy = 0.0 
+  Mx = 0.0
+  My = 0.0
+  Mxy = 0.0
   
   # E por fim, informe as propriedades de resistência do material -> Todas em Pa!!!
-	Xt = 1447.0E6      # -> Resistência à tração 
-	Xc = -1447.0E6     # -> Resistência à compressão 
-	Yt = 51.7E6        # -> Resistência à tração 
-	Yc = -206.0E6      # -> Resistência à compressão 
-	S12 = 93.0E6       # -> Resistência ao cisalhamento no plano 1-2 
+  Xt = 1447.0E6      # -> Resistência à tração 
+  Xc = -1447.0E6     # -> Resistência à compressão 
+  Yt = 51.7E6        # -> Resistência à tração 
+  Yc = -206.0E6      # -> Resistência à compressão 
+  S12 = 93.0E6       # -> Resistência ao cisalhamento no plano 1-2 
 
 ```
 
