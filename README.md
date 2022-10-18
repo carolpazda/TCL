@@ -154,3 +154,6 @@ SF_Hill, Msh = Tsai_Hill(n_camadas, tensao_local, Xt, Xc, Yt, Yc, S12)
 ```
 SF_Wu, Msw = Wu(Xt, Xc, Yt, Yc, S12, n_camadas, tensao_local)
 ```
+
+Os critérios de falha são plotados, conforme o exemplo abaixo:
+
