@@ -124,6 +124,12 @@ function main()
 
 **E claro, modifique suas entradas conforme a sua necessidade.**
 
+Todos os _mains_ irão retornar a matriz ABBD, calculada pela função
+
+```
+  ABBD= ABBD_laminado(v,n_camadas,E11, E22, G12, v12, angulo)
+```
+
 Os critério de falha implementados são:
 
 **a)** Máxima tensão;
