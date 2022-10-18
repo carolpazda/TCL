@@ -140,6 +140,17 @@ tensao_global, tensao_local, deformacao_global, deformacao_local = Defor_Tensoes
 
 Independente do _main_ que você esteja utilizando, o seu código irá retornar os valores de FS e Ms para os seguintes critérios de falha:
 
-**a)** Máxima tensão;
-**b)** Tsai-Hill;
-**c)** Tsai-Wu.
+**a)** Máxima tensão:
+```
+SF_MaxTensao = MaximaTensao(n_camadas, tensao_local, Xt, Xc, Yt, Yc, S12)
+```
+
+**b)** Tsai-Hill:
+```
+SF_Hill, Msh = Tsai_Hill(n_camadas, tensao_local, Xt, Xc, Yt, Yc, S12)
+```
+
+**c)** Tsai-Wu:
+```
+SF_Wu, Msw = Wu(Xt, Xc, Yt, Yc, S12, n_camadas, tensao_local)
+```
