@@ -3,7 +3,7 @@ _Código feito para a disciplina de Relações Constitutivas, utilizando a Teori
 
 _Autoria: Verônica Caroline Herbst Pazda_
 
-O código está separado em três códigos principais:
+O código está separado em três mains principais:
 
 **I - Propriedades Laminado**: Você deve utilizar esse main caso você já possua as propriedades do seu laminado: E11, E22, v12 e G12. Primeiro entre no _main_propLaminado.jl_ (é lá que você irá alterar sua entrada). Você deve entrar com as suas propriedades da seguinte forma:
 
