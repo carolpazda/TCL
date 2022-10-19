@@ -159,4 +159,4 @@ Além disso, os critérios de falha são plotados, conforme o exemplo abaixo:
 ![ExemploPlotJulia](https://user-images.githubusercontent.com/107930972/196515813-08695d9f-2b07-4b27-9d44-e7af94de21bf.png)
 
 Ao final, são plotadas as Distribuições de Tensão e Deformação na Lâmina, conforme a figura abaixo:
-![PlotsExtras](https://user-images.githubusercontent.com/107930972/196572854-5db42ecb-0732-47d0-b5c1-6a039a98dba4.png)
+![PlotsEspessura](https://user-images.githubusercontent.com/107930972/196733545-cb129ef4-ac70-476e-b3ae-79750727c08e.png)
