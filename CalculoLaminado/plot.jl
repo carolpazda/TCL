@@ -52,3 +52,25 @@ function Plot_CriteriosFalha(Xt,Xc,Yt,Yc,S12,tau12)
     return sig1, sig2, sig3, sigt, sigc, plot1
     
 end # function
+
+# Função auxiliar que vai calcular Z
+function Auxiliar(espessura, n_camadas, v)
+
+    # Armazenando o h e o z
+    h = zeros(n_camadas+1,1)
+    z = zeros(3*n_camadas,1)
+    h[1] = -v/2
+
+    for j=1:n_camadas
+
+        h[j+1] = h[j] + espessura
+        z[3*j-2] = -v/2
+        z[3*j-1] = z[3*j-2] + (espessura/2)
+        z[3*j] = z[3*j-1] + (espessura/2)
+        v = v - (2*espessura)
+
+    end #for
+
+    return h, z
+
+end
