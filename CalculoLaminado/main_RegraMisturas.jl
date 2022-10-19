@@ -134,6 +134,38 @@ function main()
     Plots.plot!(sig1,sig3, label="Tsai-Wu", linecolor=:darkmagenta)
     display(Plots.plot!(sig1, sig2, label=false, linecolor=:darkmagenta, title="Critérios de falha", 
 	                    xlabel = "σ1 [Pa]", ylabel = "σ2 [Pa]"))
+	
+    # Distribuição de Tensão nas Lâminas
+    h, z = Auxiliar(espessura, n_camadas, v) # -> Verificado
+
+    # Pontos
+    z1 = z[1:4]
+    #@show z
+    z2 = z[5:8]
+    z3 = z[9:12]
+    t1 = tensao_global[1,:]
+    passo1 = (maximum(t1) - minimum(t1))/1
+    t2 = tensao_global[2,:]
+    passo2 = (maximum(t2) - minimum(t2))/1
+    t3 = tensao_global[3,:]
+    passo3 = (maximum(t3) - minimum(t3))/1
+
+    # Plots -> Distribuição de Tensão nas Lâminas
+    p1 = Plots.plot(t1,z1, label=false, xticks=minimum(t1):passo1:maximum(t1))
+    p2 = Plots.plot(t2,z2, label=false, xticks=minimum(t2):passo2:maximum(t2), title="Distribuição de Tensão nas Lâminas")
+    p3 = Plots.plot(t3,z3, label=false, xticks=minimum(t3):passo3:maximum(t3))
+    #display(Plots.plot(p1,p2,p3, layout=(1,3)))
+
+    # Distribuição de Deformação nas Lâminas
+    d1 = deformacao_global[1,:]
+    d2 = deformacao_global[2,:]
+    d3 = deformacao_global[3,:]
+
+    # Plots -> Distribuição de Deformação na Lâmina
+    r1 = Plots.plot(d1,z1, label=false)
+    r2 = Plots.plot(d2,z2, label=false, title="Distribuição de Deformação nas Lâminas")
+    r3 = Plots.plot(d3,z3, label=false)
+    #display(Plots.plot(r1,r2,r3, layout=(1,3)))
 
     # Vamos retornar tudo que é de interesse para o usuário
     return ABBD, Defo_PlanoMedio, tensao_global, tensao_local, deformacao_global, deformacao_local, SF_MaxTensao, SF_Hill, Msh, SF_Wu, Msw
