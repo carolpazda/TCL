@@ -3,7 +3,6 @@
 ![Capa](https://user-images.githubusercontent.com/107930972/196736582-5b4d0a9a-616c-455a-a698-899da3a8d1e9.png)
 
 _Código feito para a disciplina de Relações Constitutivas, utilizando a Teoria Clássica dos Laminados_.
-
 _Autoria: Verônica Caroline Herbst Pazda_
 
 O código está separado em três mains principais:
