@@ -41,10 +41,10 @@ function matriz_Q(E11::Float64, E22::Float64, G12::Float64, v12::Float64)
 
 	# Cálculo dos termos da matriz de rigidez
     v21 = E22*v12/E11 
-	Q11 = E11/(1-v12*v21);
-	Q22 = E22/(1-v12*v21);
-	Q12 = E22*v12/(1-v12*v21);
-	Q66 = G12;
+	Q11 = E11/(1-v12*v21)
+	Q22 = E22/(1-v12*v21)
+	Q12 = E22*v12/(1-v12*v21)
+	Q66 = G12
  
     # Matriz de rigidez do laminado
  	Q = [Q11 Q12 0; Q12 Q22 0; 0 0 Q66]
