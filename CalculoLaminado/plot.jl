@@ -74,3 +74,45 @@ function Auxiliar(espessura, n_camadas, v)
     return h, z
 
 end
+
+# Função auxiliar para teste
+function Deformacao_e_TensaoGlobal(Defo_PlanoMedio, n_camadas, z, E11, E22, G12, v12, angulo)
+
+    # Definindo a Deformação e Tensão global
+    tensao_global_p = zeros(3, n_camadas*3)
+    deformacao_global_p = zeros(3, n_camadas*3)
+
+    # Agora vamos calcular a matriz de rigidez
+    Q = matriz_Q(E11, E22, G12, v12) 
+
+    # Calculamos a matriz de Reuter e a sua inversa
+    R = [1 0 0;0 1 0; 0 0 2] 
+    Rinv = inv(R)
+
+
+    # Loop que vai calcular
+    for j=1:n_camadas
+
+        # Primeiro as deformações correspondentes
+        deformacao_global_p[:,(3*j)-2] = Defo_PlanoMedio[1:3] + (z[(3*j)-2]*Defo_PlanoMedio[4:6])
+        deformacao_global_p[:,(3*j)-1] = Defo_PlanoMedio[1:3] + (z[(3*j)-1]*Defo_PlanoMedio[4:6])
+        deformacao_global_p[:,3*j] = Defo_PlanoMedio[1:3] + (z[3*j]*Defo_PlanoMedio[4:6])
+
+        # E agora as tensões correspondentes
+
+        # Calculando a matriz de transformação (rotação) para dada orientação do laminado
+        T = matriz_T(angulo[j]) 
+
+        # E sua inversa também
+        inversa_T = inverse_T(angulo[j])
+
+        tensao_global_p[:,(3*j)-2] = inversa_T * Q * R * T * Rinv * deformacao_global_p[:,(3*j)-2]
+        tensao_global_p[:,(3*j)-1] = inversa_T * Q * R * T * Rinv * deformacao_global_p[:,(3*j)-1]
+        tensao_global_p[:,3*j] = inversa_T * Q * R * T * Rinv * deformacao_global_p[:,3*j]
+
+    end # for
+
+    # Retornando os valores que queremos
+    return deformacao_global_p, tensao_global_p
+
+end #function
