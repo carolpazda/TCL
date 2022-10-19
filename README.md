@@ -1,4 +1,4 @@
-# TCL- Teoria Clássica de Laminados
+# TCL- Teoria Clássica dos Laminados
 
 ![Capa](https://user-images.githubusercontent.com/107930972/196736582-5b4d0a9a-616c-455a-a698-899da3a8d1e9.png)
 
